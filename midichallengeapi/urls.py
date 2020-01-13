@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
 from apps.songs import urls as songs_urls
+from apps.games import urls as games_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/song/', include(songs_urls))
+    path('api/song/', include(songs_urls)),
+    path('api/question/', include(games_urls))
 ]

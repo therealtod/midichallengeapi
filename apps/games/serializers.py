@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.games.models import Question
+from apps.games.models import Question, Game
 from apps.songs.serializers import SongSerializer
 from apps.songs.models import Song
 
@@ -18,3 +18,8 @@ class QuestionSerializer(serializers.ModelSerializer):
         question = Question.objects.create(song=song, **validated_data)
         return question
 
+
+class GameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ['player', 'game_type', 'score']

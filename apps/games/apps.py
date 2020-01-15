@@ -2,4 +2,7 @@ from django.apps import AppConfig
 
 
 class GamesConfig(AppConfig):
-    name = 'games'
+    name = 'apps.games'
+
+    def ready(self):
+        import apps.games.signals

@@ -10,7 +10,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ['song', 'suggestion', 'answer', 'song_id']
+        fields = ['id', 'song', 'suggestion', 'answer', 'song_id']
 
     def create(self, validated_data):
         song_id = validated_data.pop('song_id')

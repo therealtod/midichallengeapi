@@ -17,4 +17,3 @@ class QuestionSerializer(serializers.ModelSerializer):
         song = Song.objects.get(pk=song_id)
         question = Question.objects.create(song=song, **validated_data)
         return question
-
